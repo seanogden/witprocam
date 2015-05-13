@@ -19,7 +19,7 @@
 
         <header>
           <h1>Real time video anonymizer</h1>
-          <h2></h2>
+          <h2>by Feiran Chen and Sean Ogden</h2>
         </header>
 
         <section id="downloads" class="clearfix">
@@ -115,35 +115,6 @@ Video Hardware</p>
 
 <h3>
 <a id="conclusions" class="anchor" href="#conclusions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusions</h3>
-
-<p>The video pixelator design works very well, and exceeded our expectations.  Once tuned properly for lighting conditions, the blur effect is surprisingly accurate and robust.</p>
-
-<p>While it is fast enough, our audio processing pipeline didn’t quite live up to our expectations based on our matlab model of the phase vocoder.  We were able to get a Donald Duck-like effect for the voice, but there are some noticeable artifacts in the output.  Our plan is to make the phase vocoder adjustable so that we can raise or lower the pitch of the input voice and fix the artifacts.</p>
-
-<h3>
-<a id="intellectual-property-considerations" class="anchor" href="#intellectual-property-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intellectual property considerations</h3>
-
-<p>We based our initial design on a previous year project [PROJECT LINK], which was in turn based on the Altera TV example and Bruce Land’s VGA controller and averaging module.  We used the FFT, PLL and SDRAM controller from Altera’s megafunction collection.</p>
-
-<h3>
-<a id="high-level-design-1" class="anchor" href="#high-level-design-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>High level design</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a id="hardware-design" class="anchor" href="#hardware-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hardware design</h3>
-
-<p>The entire project is implemented entirely in hardware, there is no CPU and no software.  The trickiest part of this project was the audio, mostly because of the need to figure out the Altera FFT module, and debugging the timing of the pipeline as well as fixed point overflow issues.</p>
-
-<h3>
-<a id="results-1" class="anchor" href="#results-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results</h3>
-
-<p>The video processing is fast enough so that no artifacts are visible on the screen.  The skin detection updating is also fast enough that we are not able to move our faces fast enough to escape the blur effect.  Once the skin detection threshold is properly tuned for the lighting conditions, it is very accurate.</p>
-
-<p>The audio processing is pipelined so that we can run both the inverse FFT for one stage and the FFT for the next stage simultaenously.  The FFT and inverse FFT modules are each implemented as four parallel quad-output FFTs.  The FFT runs in approximately 500 cycles at 50MHZ, and our audio sample rate is 48KHZ.  Ultimately, the ability to do so much of the computation in parallel on the FPGA makes it possible to run the entire audio pipeline in one audio sample period.</p>
-
-<h3>
-<a id="conclusions-1" class="anchor" href="#conclusions-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusions</h3>
 
 <p>The video pixelator design works very well, and exceeded our expectations.  Once tuned properly for lighting conditions, the blur effect is surprisingly accurate and robust.</p>
 
