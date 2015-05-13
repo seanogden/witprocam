@@ -1,0 +1,177 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="431"
+     height="423">
+    <defs/>
+    <g transform=" translate(-115.5,-145.5)">
+        <path d="M 171.72 196.31 L 165.17 178.31 L 192.02 168.53 C 212.27 161.15 218.92 158.86 219.09 159.17 C 219.4 159.71 232.11 194.61 232.02 194.67 C 231.99 194.7 220.1 199.05 205.6 204.32 C 191.1 209.6 179.02 214.01 178.76 214.12 C 178.37 214.27 176.98 210.74 171.72 196.31 Z"
+              fill="#ffffff" stroke="#000000" stroke-linejoin="bevel"
+              stroke-linecap="round" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 154.26 204.93 C 152.49 199.98 150.61 194.77 150.1 193.37 L 149.15 190.81 L 155.87 190.91 C 159.56 190.97 163.36 191.11 164.32 191.23 L 166.06 191.45 L 168.12 197.04 C 169.32 200.33 170.06 202.79 169.91 203.02 C 169.67 203.39 158.35 213.4 157.77 213.76 C 157.61 213.85 156.04 209.88 154.26 204.93 Z"
+              fill="#ffffff" stroke="#000000" stroke-linejoin="bevel"
+              stroke-linecap="round" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 156.57 174.17 L 160.3 184.39 L 140 184 L 147.48 204.52 L 154.9 225.17 L 170.28 211.78 L 174.16 222.44 L 203.41 211.79 L 203.13 226.36 L 232.38 232.96 C 232.54 233.81 232.71 234.69 233.01 235.53 C 234.56 239.76 237.76 242.92 241.6 244.57 L 241.66 215.71 C 241.4 215.82 241.12 215.88 240.87 216 C 236.62 218.05 233.73 221.86 232.61 226.19 L 209.81 221.13 L 210.1 209.35 L 240.5 198.27 L 222.91 150 L 156.57 174.17 Z M 164.93 178.21 L 219.11 158.47 L 232.33 194.76 L 178.16 214.5 L 164.93 178.21 Z M 148.9 190.63 L 166.12 191.05 L 170.45 202.94 L 157.45 214.36 L 153.2 202.44 L 148.9 190.63 Z"
+              fill="#000000" stroke="none" pointer-events="none"/>
+        <rect x="120" y="260" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="184.75" y="281.75">
+                SDRAM
+            </text>
+            <text x="184.75" y="295.75">
+                Frame Buffer
+            </text>
+        </g>
+        <path d="M 191 245 L 191 260" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="260" y="260" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="324.75" y="281.75">
+                RGB Color
+            </text>
+            <text x="324.75" y="295.75">
+                Space Converter
+            </text>
+        </g>
+        <path d="M 250 285 L 260 285" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="260" y="330" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="324.75" y="358.75">
+                Pixel Classifier
+            </text>
+        </g>
+        <path d="M 325 310 L 325 330" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="120" y="400" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="184.75" y="421.75">
+                16x16 Pixel Spatial
+            </text>
+            <text x="184.75" y="435.75">
+                Averaging
+            </text>
+        </g>
+        <path d="M 320 380 L 320 385 Q 320 390 310 390 L 195 390 Q 185 390 185 395 L 185 400"
+              fill="none" stroke="#000000" stroke-width="2"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="260" y="400" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="324.75" y="414.75">
+                Downsampled
+            </text>
+            <text x="324.75" y="428.75">
+                40x30 Block
+            </text>
+            <text x="324.75" y="442.75">
+                Classification Buffer
+            </text>
+        </g>
+        <path d="M 250 425 L 260 425" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="400" y="260" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="464.75" y="281.75">
+                16x16 Pixel Spatial
+            </text>
+            <text x="464.75" y="295.75">
+                Averaging
+            </text>
+        </g>
+        <path d="M 390 285 L 400 285" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="400" y="330" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="464.75" y="344.75">
+                Downsampled
+            </text>
+            <text x="464.75" y="358.75">
+                40x30 Block
+            </text>
+            <text x="464.75" y="372.75">
+                Average Color Buffer
+            </text>
+        </g>
+        <path d="M 465 310 L 465 330" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="260" y="470" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="324.75" y="498.75">
+                VGA Controller
+            </text>
+        </g>
+        <rect x="120" y="330" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="184.75" y="358.75">
+                Switches
+            </text>
+        </g>
+        <path d="M 250 355 L 260 355" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="400" y="400" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="464.75" y="428.75">
+                Pixel Multiplexer
+            </text>
+        </g>
+        <path d="M 465 380 L 465 400" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 325 260 L 325 255 Q 325 250 335 250 L 530 250 Q 540 250 540 260 L 540 415 Q 540 425 535 425 L 530 425"
+              fill="none" stroke="#000000" stroke-width="2"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 465 450 L 465 455 Q 465 460 455 460 L 335 460 Q 325 460 325 465 L 325 470"
+              fill="none" stroke="#000000" stroke-width="2"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 435.41 504.54 L 435.41 484.89 L 468 484.89 L 500.59 484.89 L 500.59 504.54 L 500.59 524.19 L 468 524.19 L 435.41 524.19 L 435.41 504.54 Z"
+              fill="#ffffff" stroke="#000000" stroke-linejoin="bevel"
+              stroke-linecap="round" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 426.46 504.54 L 426.46 475.94 L 468.16 475.94 L 509.85 475.94 L 509.85 504.54 L 509.85 533.13 L 468.16 533.13 L 426.46 533.13 L 426.46 504.54 Z M 504.1 504.54 L 504.1 481.69 L 468 481.69 L 431.9 481.69 L 431.9 504.54 L 431.9 527.38 L 468 527.38 L 504.1 527.38 L 504.1 504.54 Z"
+              fill="#ffffff" stroke="#000000" stroke-linejoin="bevel"
+              stroke-linecap="round" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 456.74 555.9 C 458.61 551.48 459.76 546.15 459.76 541.88 L 459.76 539.2 L 468 539.2 L 476.22 539.2 L 476.27 542.48 C 476.32 546.23 477.15 550.38 478.55 554.01 L 479.5 556.45 L 468 556.45 C 457.17 556.45 456.51 556.42 456.74 555.9 Z"
+              fill="#ffffff" stroke="#000000" stroke-linejoin="bevel"
+              stroke-linecap="round" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 432 481.91 L 432 527.29 L 504 527.29 L 504 481.91 L 432 481.91 Z M 435.19 484.81 L 500.82 484.81 L 500.82 524.38 L 435.19 524.38 L 435.19 484.81 Z"
+              fill="#000000" stroke="none" pointer-events="none"/>
+        <path d="M 420 470 L 420 539.19 L 516 539.19 L 516 470 L 420 470 Z M 426.19 475.81 L 509.91 475.81 L 509.91 533.38 L 426.19 533.38 L 426.19 475.81 Z"
+              fill="#000000" stroke="none" pointer-events="none"/>
+        <path d="M 457.68 536.53 C 457.68 536.53 460.68 547.22 453 559.41"
+              fill="#000000" stroke="#000000" stroke-width="2.3"
+              stroke-linecap="round" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 478.32 536.53 C 478.32 536.53 475.32 547.22 483.01 559.41"
+              fill="#000000" stroke="#000000" stroke-width="2.3"
+              stroke-linecap="round" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <rect x="441" y="556.59" width="54" height="6.19" fill="#000000"
+              stroke="#000000" stroke-width="2.3" pointer-events="none"/>
+        <path d="M 390 495 L 420 495" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 390 425 L 400 425" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+    </g>
+</svg>
