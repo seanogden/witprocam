@@ -1,0 +1,119 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="289"
+     height="384">
+    <defs/>
+    <g transform=" translate(-255.5,-35.5)">
+        <path d="M 436.58 367.46 L 436.58 352.45 L 443.93 352.45 L 451.28 352.45 L 451.28 367.46 L 451.28 382.48 L 443.93 382.48 L 436.58 382.48 L 436.58 367.46 Z"
+              fill="#ffffff" stroke="#000000" stroke-linejoin="bevel"
+              stroke-linecap="round" stroke-miterlimit="10"
+              transform="rotate(90,477.77,367.45)" pointer-events="none"/>
+        <path d="M 466.37 393.73 L 454.79 384.27 L 454.79 368.1 L 454.79 351.93 L 466.53 342.64 C 472.99 337.52 478.29 333.36 478.32 333.39 C 478.34 333.41 478.26 349.13 478.15 368.32 L 477.95 403.2 L 466.37 393.73 Z"
+              fill="#ffffff" stroke="#000000" stroke-linejoin="bevel"
+              stroke-linecap="round" stroke-miterlimit="10"
+              transform="rotate(90,477.77,367.45)" pointer-events="none"/>
+        <path d="M 505.32 334.82 C 505.32 334.82 547.14 365.39 506.61 398.6"
+              fill="none" stroke="#000000" stroke-width="1.87"
+              stroke-linecap="round" stroke-miterlimit="10"
+              transform="rotate(90,477.77,367.45)" pointer-events="none"/>
+        <path d="M 493.5 346.25 C 493.5 346.25 521.28 366.56 494.36 388.62"
+              fill="none" stroke="#000000" stroke-width="1.87"
+              stroke-linecap="round" stroke-miterlimit="10"
+              transform="rotate(90,477.77,367.45)" pointer-events="none"/>
+        <path d="M 484.51 319.68 L 454.6 343.31 L 450.1 346.87 L 430.32 346.87 L 430.32 362.53 L 430.32 371.43 L 430.32 388.68 L 451.51 388.68 L 454.42 391.03 L 484.04 415.22 L 484.32 367.5 L 484.51 319.68 Z M 478.51 332.9 L 478.32 368.25 L 478.14 403.59 L 456.2 385.68 L 454.51 384.28 L 454.51 351.93 L 456.38 350.43 L 478.51 332.9 Z M 436.32 352.31 L 451.32 352.31 L 451.32 382.5 L 436.32 382.5 L 436.32 352.31 Z"
+              fill="#000000" stroke="none" transform="rotate(90,477.77,367.45)"
+              pointer-events="none"/>
+        <rect x="260" y="140" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="324.75" y="161.75">
+                Dual Clock
+            </text>
+            <text x="324.75" y="175.75">
+                Audio Sample FIFO
+            </text>
+        </g>
+        <rect x="260" y="200" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="324.75" y="228.75">
+                Hann Window
+            </text>
+        </g>
+        <path d="M 325 190 L 325 200" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="260" y="260" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="324.75" y="288.75">
+                FFT
+            </text>
+        </g>
+        <path d="M 325 250 L 325 260" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="410" y="140" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="474.75" y="154.75">
+                Frequency Domain
+            </text>
+            <text x="474.75" y="168.75">
+                Interpolation and
+            </text>
+            <text x="474.75" y="182.75">
+                Resample
+            </text>
+        </g>
+        <path d="M 390 285 L 395 285 Q 400 285 400 275 L 400 175 Q 400 165 405 165 L 410 165"
+              fill="none" stroke="#000000" stroke-width="2"
+              stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="410" y="200" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="474.75" y="228.75">
+                Inverse FFT
+            </text>
+        </g>
+        <path d="M 475 190 L 475 200" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 306.09 62.76 C 305.97 62.1 306.03 60.41 306.24 59 C 307.65 49.19 318.04 43.39 326.9 47.47 C 332.55 50.07 336.4 56.78 335.54 62.52 L 335.32 63.96 L 320.82 63.96 L 306.32 63.96 L 306.09 62.76 Z"
+              fill="#ffffff" stroke="#000000" stroke-linejoin="bevel"
+              stroke-linecap="round" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 308.79 71.7 L 307.39 67.31 L 314 67.22 C 317.65 67.18 323.7 67.18 327.45 67.22 L 334.28 67.31 L 332.9 71.7 L 331.51 76.1 L 320.85 76.1 L 310.2 76.1 L 308.79 71.7 Z"
+              fill="#ffffff" stroke="#000000" stroke-linejoin="bevel"
+              stroke-linecap="round" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 316.4 106.21 C 315.91 96.41 315.42 87 315.32 85.28 L 315.14 82.17 L 320.83 82.17 L 326.51 82.17 L 326.32 85.28 C 326.21 87 325.75 96.09 325.29 105.49 C 324.83 114.89 324.39 122.91 324.31 123.3 C 324.17 124 324.04 124.02 320.73 124.02 L 317.3 124.02 L 316.4 106.21 Z"
+              fill="#ffffff" stroke="#000000" stroke-linejoin="bevel"
+              stroke-linecap="round" stroke-miterlimit="10"
+              pointer-events="none"/>
+        <path d="M 320.81 40 C 309.31 40 300 49.41 300 60.91 C 300 63.81 300.61 66.55 301.69 69.06 L 305.81 82.1 L 305.91 82.1 L 309.28 82.1 L 311.81 130.19 L 311.91 130.19 L 317.81 130.19 L 317.81 136.1 L 323.81 136.1 L 323.81 130.19 L 329.72 130.19 L 329.81 130.19 L 332.35 82.1 L 335.72 82.1 L 335.81 82.1 L 339.85 69.35 L 339.94 69.06 C 341.03 66.54 341.63 63.83 341.63 60.91 C 341.63 49.41 332.32 40 320.81 40 Z M 320.81 45.91 C 329.1 45.91 335.81 52.62 335.81 60.91 C 335.81 61.95 335.63 63 335.44 64 L 306.09 64 C 305.88 63 305.81 61.94 305.81 60.91 C 305.81 52.62 312.53 45.91 320.81 45.91 Z M 307.12 67.1 L 334.5 67.1 C 334.49 67.12 334.51 67.16 334.5 67.19 L 331.69 76.19 L 331.6 76.19 L 310.13 76.19 L 310.03 76.19 L 307.13 67.1 Z M 315 82.1 L 326.63 82.1 L 324.47 124.1 L 317.16 124.1 L 315 82.1 Z"
+              fill="#000000" stroke="none" pointer-events="none"/>
+        <path d="M 321 136 L 321 140" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <rect x="410" y="260" width="130" height="50" rx="3.36" ry="3.36"
+              fill="#ffffff" stroke="#000000" pointer-events="none"/>
+        <g fill="#000" font-family="Arial,Helvetica" text-anchor="middle"
+           font-size="12px">
+            <text x="474.75" y="274.75">
+                Time Domain
+            </text>
+            <text x="474.75" y="288.75">
+                Interpolation and
+            </text>
+            <text x="474.75" y="302.75">
+                Resample
+            </text>
+        </g>
+        <path d="M 475 250 L 475 260" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+        <path d="M 475 310 L 475 320" fill="none" stroke="#000000"
+              stroke-width="2" stroke-miterlimit="10" pointer-events="none"/>
+    </g>
+</svg>
