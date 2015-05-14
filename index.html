@@ -57,7 +57,7 @@ The concept for Overlapping FFT Hanning Window and Phase Vocoder algorithm are c
 
 <p>For our purpose, we utilized the Phase Vocoder algorithm. As shown in the flowchart above, our process can be described in the following steps. We first store input audio samples frame by frame with ¾ overlapping at a frame size of 256 samples per frame. Every frame is processed with a Hanning Window function and then fed through an FFT(Fast Fourier Transform) which outputs X_n, forming stream X. Overlapping windowing is a common approach for frequency domain analysis like our application, and this is discussed in more detail in the sub-section below.  We resample stream X at intervals of length r, and in order to do so we need to interpolate between the existing data points in X.  Over time, this results in a series of n/r number of new frames. We stream interpolated frames through the iFFT(inverse FFT) and merge the overlapping frames to produce an audio stream Y. Finally we resample Y on the time domain at 1/r original sample rate. We now have completed processing the audio live stream. The output has changed in pitch but not in spectral characteristics so we can no longer identify the source of the voice but the speech content is still smooth and recognizable.</p>
 
-<h3>
+<h4>
 <a id="overlapping-fft-hanning-window" class="anchor" href="#overlapping-fft-hanning-window" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overlapping FFT Hanning Window</h3>
 
 <p>Hanning Window is applied to each frame because this effectively reduce FFT frequency leakage for non-periodic frame snapshots. The contrast is shown the graph. </p>
@@ -78,7 +78,7 @@ Video Hardware</p>
 
 <p>We also output the blurred pixel if any of the surrounding pixels were flagged as skin, which helps to correct for gaps in the skin classification due to shadows around the eyes, or glasses.</p>
 
-<p><img src="images/Pixelator.svg" alt=""></p>
+<p><img src="images/Pixelator.png" alt=""></p>
 
 
 <h3>Hardware Design</h3>
@@ -89,7 +89,7 @@ Video Hardware</p>
 
 <p>Some of our major design decisions that address the performance concerns include fixed point arithmetics, utilizing quad processing for both the FFT and iFFT calculation modules, and pipelining the stages of the audio processing. For every frame of n audio samples with window size w, we have to process on the order of w<em>n data points within ~4</em>1000n cycles. With the techniques mentioned above, we are able to do exactly that. </p>
 
-<p><img src="images/Phase-Vocoder.svg" alt=""></p>
+<p><img src="images/Phase-Vocoder.png" alt=""></p>
 
 <h3>
 <a id="fixed-point-arithmetic" class="anchor" href="#fixed-point-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fixed point arithmetic</h3>
