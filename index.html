@@ -58,7 +58,7 @@ The concept for Overlapping FFT Hanning Window and Phase Vocoder algorithm are c
 <p>For our purpose, we utilized the Phase Vocoder algorithm. As shown in the flowchart above, our process can be described in the following steps. We first store input audio samples frame by frame with ¾ overlapping at a frame size of 256 samples per frame. Every frame is processed with a Hanning Window function and then fed through an FFT(Fast Fourier Transform) which outputs X_n, forming stream X. Overlapping windowing is a common approach for frequency domain analysis like our application, and this is discussed in more detail in the sub-section below.  We resample stream X at intervals of length r, and in order to do so we need to interpolate between the existing data points in X.  Over time, this results in a series of n/r number of new frames. We stream interpolated frames through the iFFT(inverse FFT) and merge the overlapping frames to produce an audio stream Y. Finally we resample Y on the time domain at 1/r original sample rate. We now have completed processing the audio live stream. The output has changed in pitch but not in spectral characteristics so we can no longer identify the source of the voice but the speech content is still smooth and recognizable.</p>
 
 <h4>
-<a id="overlapping-fft-hanning-window" class="anchor" href="#overlapping-fft-hanning-window" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overlapping FFT Hanning Window</h3>
+<a id="overlapping-fft-hanning-window" class="anchor" href="#overlapping-fft-hanning-window" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overlapping FFT Hanning Window</h4>
 
 <p>Hanning Window is applied to each frame because this effectively reduce FFT frequency leakage for non-periodic frame snapshots. The contrast is shown the graph. </p>
 
@@ -66,11 +66,12 @@ The concept for Overlapping FFT Hanning Window and Phase Vocoder algorithm are c
 
 <p>Now that the window attenuated the data on both ends of the frame, we need to take overlapping frames from the samples so that data on the two ends of the frames are not lost. The results are simply merged back together by summation.</p>
 
-<h3>
-<a id="video-hardware-design" class="anchor" href="#video-hardware-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>Video Hardware Design</h3>
+<h3>Hardware Design and Implementation</h3>
 
 <p>The entire project is implemented entirely in hardware, there is no CPU and no software.  The trickiest part of this project was the audio, mostly because of the need to figure out the Altera FFT module, and debugging the timing of the pipeline as well as fixed point overflow issues.
 Video Hardware</p>
+<h4>
+<a id="video-hardware-design" class="anchor" href="#video-hardware-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>Video Hardware Design</h4>
 
 <p>Our video is streamed to the FPGA from an NTSC camera, where the frame buffer is stored in SDRAM in YCbCr format.  Our algorithm and the VGA controller work in 10-bit RGB color format so we first convert to RGB.  The RGB video data are then sent to classification and averaging modules to get a 40x30 buffer of binary values identifying whether each downsampled pixel is skin or not.  We take the switches as input to the pixel classification module in order to tune the threshold value.  The threshold is a 16-bit number which can be entered by encoding the binary number on with the lower 16 switches.</p>
 
@@ -80,8 +81,6 @@ Video Hardware</p>
 
 <p><img src="images/Pixelator.png" alt=""></p>
 
-
-<h3>Hardware Design</h3>
 <h4>
 <a id="audio-hardware-design" class="anchor" href="#audio-hardware-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>Audio Hardware Design</h4>
 
@@ -91,18 +90,18 @@ Video Hardware</p>
 
 <p><img src="images/Phase-Vocoder.png" alt=""></p>
 
-<h3>
-<a id="fixed-point-arithmetic" class="anchor" href="#fixed-point-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fixed point arithmetic</h3>
+<h5>
+<a id="fixed-point-arithmetic" class="anchor" href="#fixed-point-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fixed point arithmetic</h5>
 
 <p>Our design uses a system of custom fixed point arithmetic modules. Depending on the nature of each data point, the fixed-point schemes are different. This is to maximize the amount of numeric information we can store with limited width of data bus. Another motivation for this design decision is that our application requires a lot of multiplication; we would have quickly ran out of hardware resources and consume more cycles than we can afford if we were to go with bigger data length for a uniform fixed point system. </p>
 
-<h3>
-<a id="pipelined-arithmetic" class="anchor" href="#pipelined-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pipelined arithmetic</h3>
+<h5>
+<a id="pipelined-arithmetic" class="anchor" href="#pipelined-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pipelined arithmetic</h5>
 
 <p>We configured both FFT module and iFFT modules to quad output mode with four FFTs running in parallel, and we built custom arithmetic modules so that the rest of the calculations could be pipelined as well. This design effectively utilized the parallel computation power of the FPGA board. As a result, the data flows smoothly through modules without stalled cycles. </p>
 
-<h3>
-<a id="trig-arithmetic" class="anchor" href="#trig-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trig Arithmetic</h3>
+<h5>
+<a id="trig-arithmetic" class="anchor" href="#trig-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Trig Arithmetic</h5>
 
 <p>There are two major design decisions. The fixed point representations for angles and implementation of trigonometric lookup tables. The angles are represented as nine bit signed fixed point fraction of pi.  For example, instead of storing 1.57 (half of pi) we would store ½.  We also implemented lookup tables for both sin, cos and arccos operations.  Our angle representation makes rounding easy to do.</p>
 
