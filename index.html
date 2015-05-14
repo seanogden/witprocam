@@ -41,7 +41,7 @@
 <p>Our project solves the problem of privacy concern with live-streaming by automatically detecting the faces on the screen and blurring them out in real time.  The automated nature and speed are what set our approach apart from the standard workflow of post-processing videos to blur out contents.</p>
 
 <h3>
-<a id="high-level-design" class="anchor" href="#high-level-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>High level design:</h3>
+<a id="high-level-design" class="anchor" href="#high-level-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>High Level Video Processing Design</h3>
 
 <p>At a high level, our video pixelating algorithm is to flag portions of the screen that are skin, and then overlay low-resolution pixels to cover those areas.  The resolution we chose for the blur pixels is 40x30, and each blur pixel is 16x16 full resolution pixels.  For each full resolution pixel in a 16x16 block, we check whether it is skin and if so, add to an accumulator representing that blur pixel.  If the blur pixel accumulator is above a configurable threshold, we overlay the average color for that block in the output video stream.</p>
 
@@ -49,11 +49,14 @@
 
 <p>[1] Ooi, M. P. "Hardware implementation for face detection on Xilinx Virtex-II FPGA using the reversible component transformation colour space." Electronic Design, Test and Applications, 2006. DELTA 2006. Third IEEE International Workshop on. IEEE, 2006.</p>
 
+<h3>
+<a id="high-level-design" class="anchor" href="#high-level-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>High Level Audio Design</h3>
+
 <p>The overall goal for audio processing is to be able to disguise the identity of the speaker by distorting his/her pitch while retaining its short-time spectral characteristics and thus preserving the clarity of the speech content of the audio samples. 
 The concept for Overlapping FFT Hanning Window and Phase Vocoder algorithm are crucial to solving our problem and they are introduced in more detail in the following sub-sections.</p>
 
 <h4>
-<a id="phase-vocoder-algorithm" class="anchor" href="#phase-vocoder-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Phase Vocoder algorithm</h4>
+<a id="phase-vocoder-algorithm" class="anchor" href="#phase-vocoder-algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>Phase Vocoder Algorithm</h4>
 
 <p>For our purpose, we utilized the Phase Vocoder algorithm. As shown in the flowchart above, our process can be described in the following steps. We first store input audio samples frame by frame with ¾ overlapping at a frame size of 256 samples per frame. Every frame is processed with a Hanning Window function and then fed through an FFT(Fast Fourier Transform) which outputs X_n, forming stream X. Overlapping windowing is a common approach for frequency domain analysis like our application, and this is discussed in more detail in the sub-section below.  We resample stream X at intervals of length r, and in order to do so we need to interpolate between the existing data points in X.  Over time, this results in a series of n/r number of new frames. We stream interpolated frames through the iFFT(inverse FFT) and merge the overlapping frames to produce an audio stream Y. Finally we resample Y on the time domain at 1/r original sample rate. We now have completed processing the audio live stream. The output has changed in pitch but not in spectral characteristics so we can no longer identify the source of the voice but the speech content is still smooth and recognizable.</p>
 
@@ -91,12 +94,12 @@ Video Hardware</p>
 <p><img src="images/Phase-Vocoder.png" alt=""></p>
 
 <h5>
-<a id="fixed-point-arithmetic" class="anchor" href="#fixed-point-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fixed point arithmetic</h5>
+<a id="fixed-point-arithmetic" class="anchor" href="#fixed-point-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fixed Point Arithmetic</h5>
 
 <p>Our design uses a system of custom fixed point arithmetic modules. Depending on the nature of each data point, the fixed-point schemes are different. This is to maximize the amount of numeric information we can store with limited width of data bus. Another motivation for this design decision is that our application requires a lot of multiplication; we would have quickly ran out of hardware resources and consume more cycles than we can afford if we were to go with bigger data length for a uniform fixed point system. </p>
 
 <h5>
-<a id="pipelined-arithmetic" class="anchor" href="#pipelined-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pipelined arithmetic</h5>
+<a id="pipelined-arithmetic" class="anchor" href="#pipelined-arithmetic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pipelined Arithmetic</h5>
 
 <p>We configured both FFT module and iFFT modules to quad output mode with four FFTs running in parallel, and we built custom arithmetic modules so that the rest of the calculations could be pipelined as well. This design effectively utilized the parallel computation power of the FPGA board. As a result, the data flows smoothly through modules without stalled cycles. </p>
 
